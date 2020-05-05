@@ -1,0 +1,53 @@
+
+body {
+    margin: 0;
+    background-color: rgb(30, 30, 46);
+}
+
+.center {
+    width: 80%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding:  20px 40px;
+    color: black;
+}
+h1 {
+    margin: 0;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg) ;
+    border: solid 2px white;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+#return-to-top i {
+    color: white;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    transition: all 0.5s;
+    
+}
+#return-to-top:hover {
+    transform: rotate(0deg) ;
+    border: solid 2px coral;
+}
+#return-to-top:hover i {
+    color: coral;
+    top: 5px;
+    
+}
+
+
+
+
