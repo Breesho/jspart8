@@ -43,5 +43,67 @@ Cette vue de Paris moral prouve que le Paris physique ne saurait être autrement
 <p>
 En Orient seulement, la race humaine offre un buste magnifique ; mais il est un effet du calme constant affecté par ces profonds philosophes à longue pipe, à petites jambes, à torses carrés, qui méprisent le mouvement et l'ont en horreur ; tandis qu'à Paris, Petits, Moyens et Grands courent, sautent et cabriolent, fouettés par une impitoyable déesse, la Nécessité : nécessité d'argent, de gloire ou d'amusement. Aussi quelque visage frais, reposé, gracieux, vraiment jeune y est-il la plus extraordinaire des exceptions : il s'y rencontre rarement. Si vous en voyez un, assurément il appartient : à un ecclésiastique jeune et fervent, ou à quelque bon abbé quadragénaire, à triple menton ; à une jeune personne de moeurs pures comme il s'en élève dans certaines familles bourgeoises ; à une mère de vingt ans, encore pleine d'illusions et qui allaite son premier-né ; à un jeune homme frais débarqué de province, et confié à une douairière dévote qui le laisse sans un sou ; ou peut-être à quelque garçon de boutique, qui se couche à minuit, bien fatigué d'avoir plié ou déplié du calicot, et qui se lève à sept heures pour arranger l'étalage ; ou souvent à un homme de science ou de poésie, qui vit monastiquement en bonne fortune avec une belle idée, qui demeure sobre, patient et chaste ; ou à quelque sot, content de lui-même, se nourrissant de bêtise, crevant de santé, toujours occupé de se sourire à lui-même ; ou à l'heureuse et molle espèce des flâneurs, les seuls gens réellement heureux à Paris, et qui en dégustent à chaque heure les mouvantes poésies. Néanmoins, il est à Paris une portion d'êtres privilégiés auxquels profite ce mouvement excessif des fabrications, des intérêts, des affaires, des arts et de l'or. Ces êtres sont les femmes. Quoiqu'elles aient aussi mille causes secrètes qui, là plus qu'ailleurs, détruisent leur physionomie, il se rencontre, dans le monde féminin, de petites peuplades heureuses qui vivent à l'orientale, et peuvent conserver leur beauté ; mais ces femmes se montrent rarement à pied dans les rues, elles demeurent cachées, comme des plantes rares qui ne déploient leurs pétales qu'à certaines heures, et qui constituent de véritables exceptions exotiques. Cependant Paris est essentiellement aussi le pays des contrastes. Si les sentiments vrais y sont rares, il se rencontre aussi, là comme ailleurs, de nobles amitiés, des dévouements sans bornes. Sur ce champ de bataille des intérêts et des passions, de même qu'au milieu de ces sociétés en marche où triomphe l'égoïsme, où chacun est obligé de se défendre lui seul, et que nous appelons des armées, il semble que les sentiments se plaisent à être complets quand ils se montrent, et sont sublimes par juxtaposition. Ainsi des figures. A Paris, parfois, dans la haute aristocratie, se voient clairsemés quelques ravissants visages de jeunes gens, fruits d'une éducation et de moeurs tout exceptionnelles. A la juvénile beauté du sang anglais ils unissent la fermeté des traits méridionaux, l'esprit français, la pureté de la forme. Le feu de leurs yeux, une délicieuse rougeur de lèvres, le noir lustré de leur chevelure fine, un teint blanc, une coupe de visage distinguée les rendent de belles fleurs humaines, magnifiques à voir sur la masse des autres physionomies, ternies, vieillottes, crochues, grimaçantes. Aussi, les femmes admirent-elles aussitôt ces jeunes gens avec ce plaisir avide que prennent les hommes à regarder une jolie personne, décente, gracieuse, décorée de toutes les virginités dont notre imagination se plaît à embellir la fille parfaite. Si ce coup d'oeil rapidement jeté sur la population de Paris a fait concevoir la rareté d'une figure raphaëlesque, et l'admiration passionnée qu'elle y doit inspirer à première vue, le principal intérêt de notre histoire se trouvera justifié. Quod erat demonstrandum, ce qui était à démontrer, s'il est permis d'appliquer les formules de la scolastique à la science des moeurs.
 </p>
+
+
+
+
+
+<script>
+// window.onscroll = function() {
+//   console.log(document.documentElement.scrollTop)
+// }
+
+const pArray = document.querySelectorAll("p");
+
+window.addEventListener("DOMContentLoaded", hideP);
+
+function fadeIn(index, time) {
+    pArray[index].style.transition = time + "s";
+    pArray[index].style.opacity = 1;
+  
+}
+
+function fadeOut(index, time) {
+    pArray[index].style.transition = time + "s";
+    pArray[index].style.opacity = 0;
+}
+
+function hideP() {
+    for (i = 0; i < pArray.length; i++) {
+        pArray[i].style.opacity = 0;
+    }
+}
+window.addEventListener("scroll", function () {
+    let domTop = document.documentElement.scrollTop;
+    if (domTop > 0) {
+        fadeIn(0, 2)
+    }
+    for (i = 0; i < 7; i++) {
+        if (domTop > pArray[i].offsetTop) {
+            fadeIn((i + 1), 2)
+            // fadeOut(i, 2)
+        }
+    }
+    for (i = 8; i < 12; i++) {
+        if (domTop > pArray[7].offsetTop) {
+            fadeIn(i, 2)
+        }
+    }
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
   </body>
 </html>
